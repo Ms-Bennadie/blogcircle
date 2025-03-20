@@ -56,7 +56,7 @@ const SignIn = () => {
     <div className="min-h-screen flex items-center justify-center p-4 blue-gradient-bg">
       <div className="absolute top-6 left-1/2 transform -translate-x-1/2">
         <Link to="/" className="text-2xl font-display font-bold blue-gradient-text">
-          inkcircle
+          blogcicle
         </Link>
       </div>
       
