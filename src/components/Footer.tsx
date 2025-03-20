@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand/Logo */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-display font-semibold">inkcircle</h2>
+            <h2 className="text-2xl font-display font-semibold">blogcircle</h2>
             <p className="text-muted-foreground">
-              A minimalist platform for publishing and discussing ideas.
+              A modest platform for publishing and discussing ideas.
             </p>
           </div>
           
@@ -58,7 +58,7 @@ const Footer = () => {
         
         {/* Copyright */}
         <div className="mt-10 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>© {currentYear} inkcircle. All rights reserved.</p>
+          <p>© {currentYear} blogcircle. All rights reserved.</p>
         </div>
       </div>
     </footer>
