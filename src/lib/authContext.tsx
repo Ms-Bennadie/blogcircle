@@ -1,6 +1,5 @@
-
 import React, { createContext, useState, useEffect } from 'react';
-import { toast } from "@/components/ui/sonner";
+import { toast } from "@/lib/toast";
 
 // Define types for our context
 type User = {

@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { AlertCircle, Clock, MessageSquare, Share2, ThumbsUp, Bookmark, ChevronLeft } from 'lucide-react';
-import { toast } from '@/components/ui/sonner';
+import { toast } from '@/lib/toast';
 import { BlogPost as BlogPostType } from '@/components/BlogCard';
 
 // Mock post data
