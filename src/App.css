@@ -13,10 +13,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em rgba(102, 108, 255, 0.7));
+  filter: drop-shadow(0 0 2em rgba(168, 85, 247, 0.7));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.7));
+  filter: drop-shadow(0 0 2em rgba(219, 39, 119, 0.7));
 }
 
 @keyframes logo-spin {
@@ -38,7 +38,7 @@
   padding: 2em;
   background: rgba(255, 255, 255, 0.8);
   border-radius: var(--radius);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.1);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.3s ease;
@@ -46,13 +46,42 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(31, 38, 135, 0.15);
+  box-shadow: 0 12px 32px rgba(168, 85, 247, 0.2);
 }
 
 .read-the-docs {
   color: #888;
-  background: linear-gradient(90deg, #9b87f5, #7E69AB);
+  background: linear-gradient(90deg, #9b87f5, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
 }
+
+/* Entertainment-specific styles */
+.entertainment-badge {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: white;
+  font-weight: 500;
+  padding: 0.35em 0.75em;
+  border-radius: 2em;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.category-music {
+  border-bottom-color: #8b5cf6;
+}
+
+.category-fashion {
+  border-bottom-color: #ec4899;
+}
+
+.category-sports {
+  border-bottom-color: #2563eb;
+}
+
+.category-dance {
+  border-bottom-color: #f97316;
+}
+

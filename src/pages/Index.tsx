@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -8,12 +7,12 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChevronRight } from 'lucide-react';
 
-// Mock blog posts data
+// Mock blog posts data for entertainment sector
 const MOCK_POSTS: BlogPost[] = [
   {
     id: '1',
-    title: 'The Future of Web Design: Minimalism and Functionality',
-    excerpt: 'Exploring how modern web design is evolving to prioritize simplicity, accessibility, and user experience, while still maintaining visual appeal and brand identity.',
+    title: 'The Evolution of Hip-Hop Dance in the Digital Age',
+    excerpt: 'How social media platforms like TikTok have transformed hip-hop dance culture, creating new styles and connecting dancers worldwide.',
     content: '<p>Full content here...</p>',
     author: {
       id: '1',
@@ -22,14 +21,14 @@ const MOCK_POSTS: BlogPost[] = [
     },
     date: 'May 15, 2023',
     readTime: '5 min read',
-    tags: ['Design', 'Web Development', 'UX'],
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop',
+    tags: ['Dance', 'Hip-Hop', 'Digital Culture'],
+    image: 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?q=80&w=2070&auto=format&fit=crop',
     comments: 12,
   },
   {
     id: '2',
-    title: 'Understanding Modern JavaScript: From ES6 to Today',
-    excerpt: 'A comprehensive guide to the evolution of JavaScript and how the language has transformed web development practices over the past decade.',
+    title: 'Sustainable Fashion: The Celebrities Leading the Movement',
+    excerpt: 'A look at how A-list celebrities are using their platforms to promote sustainable fashion choices and drive industry change.',
     content: '<p>Full content here...</p>',
     author: {
       id: '2',
@@ -38,14 +37,14 @@ const MOCK_POSTS: BlogPost[] = [
     },
     date: 'April 28, 2023',
     readTime: '8 min read',
-    tags: ['JavaScript', 'Programming', 'Web Development'],
-    image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=2074&auto=format&fit=crop',
+    tags: ['Fashion', 'Sustainability', 'Celebrities'],
+    image: 'https://images.unsplash.com/photo-1589476993333-f55b84301219?q=80&w=2127&auto=format&fit=crop',
     comments: 24,
   },
   {
     id: '3',
-    title: 'The Psychology of User Interfaces: Why Some Designs Just Feel Right',
-    excerpt: 'Exploring the cognitive aspects of UI design and how understanding human psychology can help create more intuitive and satisfying user experiences.',
+    title: 'The Psychology Behind Sports Fandom: Why We Get So Attached',
+    excerpt: 'Exploring the emotional connections fans make with sports teams and how these bonds affect our identities and mental health.',
     content: '<p>Full content here...</p>',
     author: {
       id: '3',
@@ -54,14 +53,14 @@ const MOCK_POSTS: BlogPost[] = [
     },
     date: 'May 2, 2023',
     readTime: '6 min read',
-    tags: ['Psychology', 'UI', 'Design'],
-    image: 'https://images.unsplash.com/photo-1629752187687-3d3c7ea3a21b?q=80&w=1826&auto=format&fit=crop',
+    tags: ['Sports', 'Psychology', 'Fandom'],
+    image: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2073&auto=format&fit=crop',
     comments: 18,
   },
   {
     id: '4',
-    title: 'Building Accessible Web Applications: A Practical Guide',
-    excerpt: 'A step-by-step approach to incorporating accessibility standards in web development, ensuring applications are usable for everyone.',
+    title: 'K-Pop\'s Global Influence: More Than Just Music',
+    excerpt: 'How South Korean pop culture is reshaping global entertainment, fashion trends, and even language learning among international fans.',
     content: '<p>Full content here...</p>',
     author: {
       id: '1',
@@ -70,14 +69,14 @@ const MOCK_POSTS: BlogPost[] = [
     },
     date: 'April 15, 2023',
     readTime: '10 min read',
-    tags: ['Accessibility', 'Web Development', 'Inclusion'],
-    image: 'https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2070&auto=format&fit=crop',
+    tags: ['Music', 'K-Pop', 'Cultural Impact'],
+    image: 'https://images.unsplash.com/photo-1619229666372-3c586da1e828?q=80&w=2070&auto=format&fit=crop',
     comments: 9,
   },
   {
     id: '5',
-    title: 'The Rise of Jamstack: Modern Web Architecture Explained',
-    excerpt: 'Understanding the benefits and implementation strategies of Jamstack architecture for building faster, more secure, and scalable websites.',
+    title: 'The Rising Popularity of Vintage Fashion Among Gen Z',
+    excerpt: 'Why today\'s youth are embracing fashion trends from decades past, and how vintage shopping is becoming a form of sustainable consumption.',
     content: '<p>Full content here...</p>',
     author: {
       id: '4',
@@ -86,14 +85,14 @@ const MOCK_POSTS: BlogPost[] = [
     },
     date: 'March 30, 2023',
     readTime: '7 min read',
-    tags: ['Jamstack', 'Architecture', 'Performance'],
-    image: 'https://images.unsplash.com/photo-1629752187687-3d3c7ea3a21b?q=80&w=1826&auto=format&fit=crop',
+    tags: ['Fashion', 'Gen Z', 'Vintage'],
+    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=2176&auto=format&fit=crop',
     comments: 15,
   },
   {
     id: '6',
-    title: 'Effective State Management in Modern Frontend Frameworks',
-    excerpt: 'Comparing different approaches to managing application state in React, Vue, and Angular, with practical examples and performance considerations.',
+    title: 'How Streaming Services Are Changing Music Production',
+    excerpt: 'The impact of Spotify, Apple Music, and other platforms on song structure, album length, and artistic expression in the music industry.',
     content: '<p>Full content here...</p>',
     author: {
       id: '2',
@@ -102,20 +101,22 @@ const MOCK_POSTS: BlogPost[] = [
     },
     date: 'May 10, 2023',
     readTime: '9 min read',
-    tags: ['State Management', 'Frontend', 'JavaScript'],
-    image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=2074&auto=format&fit=crop',
+    tags: ['Music', 'Streaming', 'Industry'],
+    image: 'https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=2074&auto=format&fit=crop',
     comments: 21,
   },
 ];
 
+// Entertainment-focused categories
 const CATEGORIES = [
   'All',
-  'Design',
-  'Development',
-  'JavaScript',
-  'UI/UX',
-  'Accessibility',
-  'Architecture',
+  'Music',
+  'Dance',
+  'Fashion',
+  'Sports',
+  'Movies',
+  'TV Shows',
+  'Celebrity News'
 ];
 
 const Index = () => {
@@ -176,18 +177,18 @@ const Index = () => {
         {/* Hero Section */}
         <section className="container px-4 py-12 mx-auto">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight animate-slide-up">
-              Explore ideas, share stories
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight animate-slide-up bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text">
+              Your entertainment pulse
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up animation-delay-100">
-              inkcircle is a minimalist blog platform focused on what truly matters — your content and the conversations it inspires.
+              inkcircle brings you the latest in music, dance, fashion, and sports — keeping you connected to the entertainment world.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4 animate-slide-up animation-delay-200">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600">
                 <Link to="/signup">Start writing</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="#featured">Explore posts</Link>
+              <Button asChild variant="outline" size="lg" className="border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/20">
+                <Link to="#featured">Explore stories</Link>
               </Button>
             </div>
           </div>
@@ -196,99 +197,99 @@ const Index = () => {
         {/* Featured Post Section */}
         <section id="featured" className="container px-4 py-16 mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl md:text-3xl font-display font-bold tracking-tight">
-              Featured Post
+            <h2 className="text-2xl md:text-3xl font-display font-bold tracking-tight bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text">
+              Featured Story
             </h2>
             <Link to="#" className="text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors">
               <span>View all</span>
               <ChevronRight size={16} />
             </Link>
-          </div>
-          
-          {isLoading ? (
-            <div className="h-96 w-full bg-muted/30 animate-pulse rounded-lg"></div>
-          ) : featuredPost ? (
-            <BlogCard post={featuredPost} variant="featured" />
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">No featured posts available</p>
-            </div>
-          )}
-        </section>
+        </div>
         
-        {/* Latest Posts Section */}
-        <section className="container px-4 py-16 mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-8">
-            Latest Posts
-          </h2>
-          
-          <Tabs defaultValue="All" className="w-full">
-            <TabsList className="mb-8 flex flex-wrap h-auto bg-transparent border-b w-full justify-start">
-              {CATEGORIES.map((category) => (
-                <TabsTrigger
-                  key={category}
-                  value={category}
-                  onClick={() => filterPostsByCategory(category)}
-                  className={`px-4 py-2 rounded-none border-b-2 border-transparent data-[state=active]:border-foreground transition-all
-                    ${activeCategory === category ? 'text-foreground font-medium' : 'text-muted-foreground'}
-                  `}
-                >
-                  {category}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            
-            <TabsContent value={activeCategory} className="mt-0">
-              {isLoading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="h-80 bg-muted/30 animate-pulse rounded-lg"></div>
-                  ))}
-                </div>
-              ) : posts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {posts.map((post) => (
-                    <BlogCard key={post.id} post={post} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground">No posts available in this category</p>
-                </div>
-              )}
-              
-              {posts.length > 0 && (
-                <div className="flex justify-center mt-12">
-                  <Button variant="outline" size="lg">
-                    Load more
-                  </Button>
-                </div>
-              )}
-            </TabsContent>
-          </Tabs>
-        </section>
-        
-        {/* Call to Action */}
-        <section className="bg-muted/50 py-20 mt-16">
-          <div className="container px-4 mx-auto text-center">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="text-3xl md:text-4xl font-display font-bold">
-                Ready to share your story?
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Join our community of writers and readers to connect through meaningful content.
-              </p>
-              <Button asChild size="lg" className="mt-6">
-                <Link to="/signup">Get started</Link>
-              </Button>
-            </div>
+        {isLoading ? (
+          <div className="h-96 w-full bg-muted/30 animate-pulse rounded-lg"></div>
+        ) : featuredPost ? (
+          <BlogCard post={featuredPost} variant="featured" />
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">No featured posts available</p>
           </div>
-        </section>
-      </main>
+        )}
+      </section>
       
-      <Footer />
-    </div>
-  );
+      {/* Latest Posts Section */}
+      <section className="container px-4 py-16 mx-auto">
+        <h2 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-8 bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text">
+          Entertainment Highlights
+        </h2>
+        
+        <Tabs defaultValue="All" className="w-full">
+          <TabsList className="mb-8 flex flex-wrap h-auto bg-transparent border-b w-full justify-start">
+            {CATEGORIES.map((category) => (
+              <TabsTrigger
+                key={category}
+                value={category}
+                onClick={() => filterPostsByCategory(category)}
+                className={`px-4 py-2 rounded-none border-b-2 border-transparent data-[state=active]:border-purple-500 transition-all
+                  ${activeCategory === category ? 'text-foreground font-medium' : 'text-muted-foreground'}
+                `}
+              >
+                {category}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          
+          <TabsContent value={activeCategory} className="mt-0">
+            {isLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="h-80 bg-muted/30 animate-pulse rounded-lg"></div>
+                ))}
+              </div>
+            ) : posts.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {posts.map((post) => (
+                  <BlogCard key={post.id} post={post} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No posts available in this category</p>
+              </div>
+            )}
+            
+            {posts.length > 0 && (
+              <div className="flex justify-center mt-12">
+                <Button variant="outline" size="lg">
+                  Load more
+                </Button>
+              </div>
+            )}
+          </TabsContent>
+        </Tabs>
+      </section>
+      
+      {/* Call to Action */}
+      <section className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-950/40 dark:to-pink-950/40 py-20 mt-16">
+        <div className="container px-4 mx-auto text-center">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <h2 className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text">
+              Share your entertainment story
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Join our community of writers and readers passionate about music, dance, fashion, and sports.
+            </p>
+            <Button asChild size="lg" className="mt-6 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600">
+              <Link to="/signup">Get started</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <Footer />
+  </div>
+);
 };
 
 export default Index;

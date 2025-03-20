@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
@@ -13,31 +12,31 @@ import { AlertCircle, Clock, MessageSquare, Share2, ThumbsUp, Bookmark, ChevronL
 import { toast } from '@/lib/toast';
 import { BlogPost as BlogPostType } from '@/components/BlogCard';
 
-// Mock post data
+// Mock post data for entertainment sector
 const MOCK_POST: BlogPostType = {
   id: '1',
-  title: 'The Future of Web Design: Minimalism and Functionality',
-  excerpt: 'Exploring how modern web design is evolving to prioritize simplicity, accessibility, and user experience.',
+  title: 'The Evolution of Hip-Hop Dance in the Digital Age',
+  excerpt: 'How social media platforms like TikTok have transformed hip-hop dance culture, creating new styles and connecting dancers worldwide.',
   content: `
-    <h1>The Future of Web Design: Minimalism and Functionality</h1>
-    <p>Web design has come a long way since the early days of the internet. From the flashy, animated GIF-laden pages of the late 90s to the sleek, minimalist designs of today, the evolution of web aesthetics reflects broader cultural shifts in how we interact with technology.</p>
-    <h2>The Rise of Minimalism</h2>
-    <p>Minimalist design principles have dominated web design trends for the past decade. Characterized by clean lines, ample white space, and restrained color palettes, minimalist websites prioritize content and user experience above all else.</p>
-    <p>This shift toward simplicity isn't merely aesthetic—it's functional. As users access websites across a multitude of devices with varying screen sizes, minimalist designs adapt more gracefully to different viewing contexts.</p>
-    <blockquote>Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs</blockquote>
-    <h2>Function Driving Form</h2>
-    <p>Today's most successful websites understand that design should serve function. Key elements of this approach include:</p>
+    <h1>The Evolution of Hip-Hop Dance in the Digital Age</h1>
+    <p>The way we consume, create, and share dance has fundamentally changed with the rise of social media platforms. Hip-hop dance, with its rich culture of innovation and self-expression, has found a particularly vibrant home in the digital landscape.</p>
+    <h2>From Streets to Screens</h2>
+    <p>Hip-hop dance originated in the 1970s alongside the development of hip-hop music in New York City, primarily as a street dance form. It was shared through community gatherings, battles, and in-person cultural exchange. Today, while these traditions continue, the primary vehicle for dance transmission has become the digital screen.</p>
+    <p>TikTok, Instagram, and YouTube have created global stages where dancers from different backgrounds and geographic locations can share their interpretations of hip-hop movement, leading to unprecedented cross-cultural influence and evolution.</p>
+    <blockquote>The internet didn't just document hip-hop dance culture; it fundamentally transformed how movements are created, named, and popularized. - Dance historian Naomi Johnson</blockquote>
+    <h2>The Rise of Viral Dance Challenges</h2>
+    <p>Perhaps the most significant digital-age contribution to hip-hop dance is the viral dance challenge. These short, catchy combinations spread rapidly through social networks, creating:</p>
     <ul>
-      <li>Intuitive navigation that requires minimal cognitive load</li>
-      <li>Strategic use of negative space to guide attention</li>
-      <li>Typography that enhances readability across devices</li>
-      <li>Accessibility considerations built into the design process</li>
+      <li>Mainstream visibility for hip-hop choreographers</li>
+      <li>New economic opportunities through brand partnerships</li>
+      <li>Accelerated evolution of movement vocabulary</li>
+      <li>Cross-generational participation in dance culture</li>
     </ul>
-    <p>The emphasis on functionality doesn't mean aesthetics are unimportant. Rather, beauty emerges from the elegant solution of problems.</p>
-    <h2>Looking Ahead</h2>
-    <p>As we look to the future, we can expect web design to become even more focused on creating seamless, accessible experiences. Emerging technologies like voice interfaces, augmented reality, and artificial intelligence will influence how websites function and appear.</p>
-    <p>The most forward-thinking designers are already exploring how these technologies can enhance rather than complicate the user experience, maintaining the core principles of minimalism while leveraging new capabilities.</p>
-    <p>In conclusion, the future of web design lies not in flashy trends or visual complexity, but in the thoughtful application of design principles that prioritize the user's needs, creating experiences that feel both intuitive and delightful.</p>
+    <p>Choreographers like JaQuel Knight, who created Beyoncé's "Single Ladies" dance, and Keara Wilson, creator of the viral "Savage" TikTok dance, have helped reshape not just hip-hop dance, but pop culture as a whole.</p>
+    <h2>Digital Divides and Opportunities</h2>
+    <p>While digital platforms have democratized access to hip-hop dance in many ways, they've also created new divisions. Issues of proper attribution have emerged as viral dances cross platforms, with many Black creators not receiving recognition for viral trends they started.</p>
+    <p>Simultaneously, these platforms have created unprecedented opportunities for dancers in regions where hip-hop wasn't previously mainstream. From South Korea to Nigeria, regional hip-hop dance scenes have flourished by combining global influences with local movement traditions.</p>
+    <p>As we look to the future, the relationship between digital platforms and hip-hop dance culture will continue to evolve, creating both challenges and opportunities for the preservation and innovation of this vibrant cultural expression.</p>
   `,
   author: {
     id: '1',
@@ -46,8 +45,8 @@ const MOCK_POST: BlogPostType = {
   },
   date: 'May 15, 2023',
   readTime: '5 min read',
-  tags: ['Design', 'Web Development', 'UX'],
-  image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop',
+  tags: ['Dance', 'Hip-Hop', 'Digital Culture'],
+  image: 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?q=80&w=2070&auto=format&fit=crop',
   comments: 12,
 };
 

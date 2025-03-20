@@ -26,6 +26,25 @@ type BlogCardProps = {
   variant?: 'default' | 'featured';
 };
 
+// Function to determine badge color based on tag
+const getTagColor = (tag: string): string => {
+  const tag_lower = tag.toLowerCase();
+  if (tag_lower.includes('music') || tag_lower.includes('k-pop') || tag_lower.includes('hip-hop')) {
+    return 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800';
+  } else if (tag_lower.includes('dance')) {
+    return 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600';
+  } else if (tag_lower.includes('sports') || tag_lower.includes('fandom')) {
+    return 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800';
+  } else if (tag_lower.includes('fashion') || tag_lower.includes('style') || tag_lower.includes('trend')) {
+    return 'bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600';
+  } else if (tag_lower.includes('movie') || tag_lower.includes('tv') || tag_lower.includes('film')) {
+    return 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700';
+  } else if (tag_lower.includes('celebrity')) {
+    return 'bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600';
+  }
+  return '';
+};
+
 const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
   const isFeatured = variant === 'featured';
 
@@ -54,7 +73,11 @@ const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-2">
               {post.tags.slice(0, 3).map((tag) => (
-                <Badge key={tag} variant="secondary" className="font-normal text-xs">
+                <Badge 
+                  key={tag} 
+                  variant="secondary" 
+                  className={`font-normal text-xs ${getTagColor(tag)}`}
+                >
                   {tag}
                 </Badge>
               ))}
