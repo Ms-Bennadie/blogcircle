@@ -49,7 +49,7 @@ const Header = () => {
           to="/" 
           className="text-2xl font-display font-bold tracking-tight hover:opacity-80 transition-opacity"
         >
-          inkcircle
+          blogcircle
         </Link>
 
         {/* Desktop Navigation */}
