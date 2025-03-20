@@ -56,7 +56,7 @@ const SignIn = () => {
     <div className="min-h-screen flex items-center justify-center p-4 blue-gradient-bg">
       <div className="absolute top-6 left-1/2 transform -translate-x-1/2">
         <Link to="/" className="text-2xl font-display font-bold blue-gradient-text">
-          blogcicle
+          blogcircle
         </Link>
       </div>
       
@@ -80,7 +80,7 @@ const SignIn = () => {
             Log in
           </CardTitle>
           <CardDescription className="text-center text-blue-300">
-            Your favorite social network
+            Your first choice social network
           </CardDescription>
         </CardHeader>
         
