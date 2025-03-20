@@ -100,7 +100,7 @@ const SignUp = () => {
               <ArrowLeft size={18} />
             </Button>
             <Link to="/" className="text-xl font-display font-semibold">
-              inkcircle
+              blogcircle
             </Link>
           </div>
           
@@ -108,7 +108,7 @@ const SignUp = () => {
             Create your account
           </CardTitle>
           <CardDescription className="text-center">
-            Enter your details to get started with inkcircle
+            Enter your details to get started with blogcircle
           </CardDescription>
         </CardHeader>
         
