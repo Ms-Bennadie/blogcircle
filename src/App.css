@@ -13,10 +13,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em rgba(168, 85, 247, 0.7));
+  filter: drop-shadow(0 0 2em rgba(59, 130, 246, 0.7));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em rgba(219, 39, 119, 0.7));
+  filter: drop-shadow(0 0 2em rgba(59, 130, 246, 0.7));
 }
 
 @keyframes logo-spin {
@@ -36,22 +36,22 @@
 
 .card {
   padding: 2em;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 23, 42, 0.8);
   border-radius: var(--radius);
-  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.1);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.18);
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.3);
 }
 
 .read-the-docs {
   color: #888;
-  background: linear-gradient(90deg, #9b87f5, #ec4899);
+  background: linear-gradient(90deg, #3b82f6, #93c5fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
@@ -59,7 +59,7 @@
 
 /* Entertainment-specific styles */
 .entertainment-badge {
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   color: white;
   font-weight: 500;
   padding: 0.35em 0.75em;
@@ -78,10 +78,35 @@
 }
 
 .category-sports {
-  border-bottom-color: #2563eb;
+  border-bottom-color: #3b82f6;
 }
 
 .category-dance {
   border-bottom-color: #f97316;
 }
 
+/* Dark theme elements */
+.dark-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.2);
+  color: #fff;
+}
+
+.blue-gradient-bg {
+  background: radial-gradient(circle at bottom left, #000 0%, #0f172a 30%, #1e40af 100%);
+}
+
+.blue-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.blue-text {
+  color: #3b82f6;
+}
+
+.blue-gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
